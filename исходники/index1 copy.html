@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации по туризму</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="filters">
+			<h2>Предпочтения</h2>
+			<h3>Сезон</h3>
+			<div class="preferences-buttons"> 
+				<button class="filter-button" data-filter="season" data-value="summer">Лето</button>
+				<button class="filter-button" data-filter="season" data-value="winter">Зима</button>
+			</div>
+
+			<h3>Стоимость</h3>
+			<div class="preferences-buttons">
+				<button class="filter-button" data-filter="approximate_cost" data-value="дешево">Дешево</button>
+				<button class="filter-button" data-filter="approximate_cost" data-value="умеренно">Умеренно</button>
+				<button class="filter-button" data-filter="approximate_cost" data-value="дорого">Дорого</button>
+			</div>
+
+			<h3>Активность</h3>
+			<div class="preferences-buttons">
+				<button class="filter-button" data-filter="activity_type" data-value="поход">Поход</button>
+				<button class="filter-button" data-filter="activity_type" data-value="культурный">Культурный</button>
+				<button class="filter-button" data-filter="activity_type" data-value="рыбалка">Рыбалка</button>
+				<button class="filter-button" data-filter="activity_type" data-value="активный">Активный</button>
+			</div>
+
+			<h3>Местность</h3>
+			<div class="preferences-buttons">
+				<button class="filter-button" data-filter="terrain_type" data-value="лес">Лес</button>
+				<button class="filter-button" data-filter="terrain_type" data-value="горы">Горы</button>
+				<button class="filter-button" data-filter="terrain_type" data-value="пустыня">Пустыня</button>
+				<button class="filter-button" data-filter="terrain_type" data-value="озеро">Озеро</button>
+				<button class="filter-button" data-filter="terrain_type" data-value="равнинная">Равнины</button>
+			</div>
+
+			<h3>Кемпинг</h3>
+			<div class="preferences-buttons">
+				<button class="filter-button" data-filter="camping_available" data-value="true">Да</button>
+				<button class="filter-button" data-filter="camping_available" data-value="false">Нет</button>
+			</div>
+				<button class="recommendation-button" id="get_recommendations">Получить рекомендации</button>
+    </div>
+				<!-- rec -->
+				<div class="main">
+					<div id="recommendations" class="recommendations">
+						<img  src="image/1.jpg" alt="">
+					</div>
+				</div>
+	</div>
+
+		<!-- Кнопка чата -->
+		<button class="chat">
+			<img class="img-chat" src="img/icons8-чат-64 (1).png" alt="Chat">
+	  </button>
+
+	<!-- Боковая панель чата -->
+		<div class="chat-panel" id="chatPanel">
+			<span class="close-panel" id="closePanel">&times;</span>
+			<h2>Чат</h2>
+			<div class="chat-body" id="chatBody">
+					<p>Добро пожаловать! Чем могу помочь?</p>
+			</div>
+			<input type="text" placeholder="Напишите сообщение..." class="chat-input" id="chatInput">
+			<button id="sendMessage">Отправить</button>
+	</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	padding: 20px;
+}
+.container {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+}
+.filters {
+	background-color: #ffffff;
+	padding: 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+h3 {
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+.filter-button.active {
+	background-color: #c29b1b;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.preferences-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.preferences-buttons button {
+	flex: 1 1 auto;
+	min-width: 100px;
+	max-width: 150px;
+	box-sizing: border-box;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	border-radius: 8px;
+}
+.recommendation-button {
+	margin: auto;
+	margin-top: 40px;
+	width: 300px;
+	height: 50px;
+	border-radius: 8px;
+}
+button, .filter-button {
+	padding: 10px 20px;
+	margin-bottom: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	display: block;
+	margin-top: 5px;
+}
+button:hover, .filter-button:hover {
+	background-color: #45a049;
+}
+
+/* rec */
+.card h3 {
+	margin-top: 0;
+}
+.card p {
+	margin: 10px 0;
+}
+.main {
+	margin-left: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(300px, 1fr));
+	grid-gap: 20px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	width: 100%;
+}
+#recommendations p {
+	font-size: 16px;
+	color: #555;
+}
+.card {
+	background-color: white;
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat */
+.chat {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	right: 17px;
+	bottom: 7px;
+	background-color: #4CAF50;
+	border: none;
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.chat:hover {
+	background-color: #dda50d;
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.img-chat {
+	width: 50px;
+	height: 50px;
+	transform: scale(-1, 1);
+}
+
+/* Боковая панель чата */
+.chat-panel {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	top: 300px;
+	right: -500px; /* закрытие */
+	width: 350px;
+	height: 500px;
+	background-color: white;
+	box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+	transition: right 0.3s ease;
+	z-index: 1000;
+	padding: 20px;
+	border-radius: 5px;
+}
+.close-panel {
+	align-self: flex-end;
+	font-size: 24px;
+	cursor: pointer;
+	color: #aaa;
+	transition: color 0.3s ease;
+}
+.close-panel:hover {
+	color: #000;
+}
+.chat-body {
+	flex: 1;
+	overflow-y: auto;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px;
+}
+.chat-input {
+	width: 330px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+}

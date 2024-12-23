@@ -1,0 +1,234 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	padding: 20px;
+	background-image: url(img/ii.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.container {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+}
+.filters {
+	width: 400px;
+	background-color: #0000009d;
+	padding: 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+h2 {
+	padding-top: 25px;
+	text-align: center;
+	margin-bottom: 10px;
+	color: white;
+}
+h3 {
+	padding-top: 30px;
+	padding-bottom: 10px;
+	color: white;
+}
+.filter-button.active {
+	background-color: #389b20c9;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.preferences-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.preferences-buttons button {
+	flex: 1 1 auto;
+	min-width: 100px;
+	max-width: 150px;
+	box-sizing: border-box;
+	border: none;
+	background-color: #f0b515d5;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	border-radius: 8px;
+}
+.recommendation-button {
+	margin: auto;
+	margin-top: 40px;
+	width: 300px;
+	height: 50px;
+	border-radius: 8px;
+}
+button, .filter-button {
+	padding: 10px 20px;
+	margin-bottom: 10px;
+	background-color: #dd9817;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	display: block;
+	margin-top: 5px;
+}
+.filter-button:hover {
+	background-color: #389b20c9;
+}
+
+/* rec */
+.main {
+	margin-left: 7px;
+	flex: 1;
+	padding: 20px;
+	background-color: #0000009d;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.image-container {
+	width: 300px;
+	height: 400px;
+	overflow: hidden;
+	border-radius: 8px;
+	filter: brightness(75%);
+	transition: filter 0.3s;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	padding: 10px;
+	text-align:left;
+	transition: opacity 0.3s;
+	opacity: 1;
+}
+.image-container:hover .image-overlay {
+	opacity: 0;
+}
+.image-description {
+	position: absolute;
+	padding-left: 15px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.image-description:hover .image-description {
+	opacity: 1;
+}
+#recommendations {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+.card {
+	background-color: white;
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+	margin-top: 0;
+}
+.card p {
+	margin: 10px 0;
+}
+
+/* Chat */
+.chat {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	right: 17px;
+	bottom: 7px;
+	background-color: #4CAF50;
+	border: none;
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.chat:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.img-chat {
+	width: 50px;
+	height: 50px;
+	transform: scale(-1, 1);
+}
+.chat-name {
+	color: #000;
+}
+
+/* Боковая панель чата */
+.chat-panel {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	bottom: 100px;
+	right: -500px; /* закрытие */
+	width: 350px;
+	height: 500px;
+	background-color: white;
+	box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+	transition: right 0.3s ease;
+	z-index: 1000;
+	padding: 20px;
+	border-radius: 5px;
+}
+.close-panel {
+	align-self: flex-end;
+	font-size: 24px;
+	cursor: pointer;
+	color: #aaa;
+	transition: color 0.3s ease;
+}
+.close-panel:hover {
+	color: #000;
+}
+.chat-name {
+	padding-top: 0px;
+}
+.chat-body {
+	flex: 1;
+	overflow-y: auto;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px;
+}
+.chat-input {
+	width: 310px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+}
+.send {
+	border-radius: 8px;
+	background-color: #4CAF50;
+}
+.send:hover {
+	background-color: #4ca349;
+}
